@@ -18,13 +18,7 @@ def api_azuredevops_webhook(
         topic: str=REQ(default='coverage')
 ) -> HttpResponse:
 
-    # construct the body of the message
-    body = 'A new build from Azure DevOps! :smile:'
-
-    # try to add the Wikipedia article of the day
-    body_template = '\n' + payload['detailedMessage']["markdown"]
-    body += body_template
-
+    body = payload['detailedMessage']["markdown"]
 
     # send the message
     check_send_webhook_message(request, user_profile, topic, body)
