@@ -22,8 +22,8 @@ def api_azuredevops_webhook(
     body = 'A new build from Azure DevOps! :smile:'
 
     # try to add the Wikipedia article of the day
-    body_template = '\n{detailedMessage.markdown}'
-    body += body_template.format(**payload)
+    body_template = '\n' + payload['detailedMessage']["markdown"]
+    body += body_template
 
 
     # send the message
