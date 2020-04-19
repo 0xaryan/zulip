@@ -15,7 +15,6 @@ from zerver.models import UserProfile
 def api_azuredevops_webhook(
         request: HttpRequest, user_profile: UserProfile,
         payload: Dict[str, Iterable[Dict[str, Any]]]=REQ(argument_type='body'),
-        stream: str=REQ(default='devops'),
         topic: str=REQ(default='coverage')
 ) -> HttpResponse:
 
@@ -28,6 +27,6 @@ def api_azuredevops_webhook(
 
 
     # send the message
-    check_send_webhook_message(request, user_profile, topic, body, stream)
+    check_send_webhook_message(request, user_profile, topic, body)
 
     return json_success()
