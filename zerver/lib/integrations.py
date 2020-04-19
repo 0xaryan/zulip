@@ -351,6 +351,7 @@ WEBHOOK_INTEGRATIONS = [
     WebhookIntegration('zabbix', ['monitoring'], display_name='Zabbix'),
     WebhookIntegration('gci', ['misc'], display_name='Google Code-in',
                        stream_name='gci'),
+    WebhookIntegration('azuredevops', ['misc'], display_name='Azure DevOps'),
 ]  # type: List[WebhookIntegration]
 
 INTEGRATIONS = {
